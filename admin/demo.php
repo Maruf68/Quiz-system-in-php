@@ -42,7 +42,7 @@
                                         <div class="form-group">
                                             <input type="submit" name="submit1" value="Add exam" class="btn btn-success">
                                           
-                                            <div class="alert alert-success" id="insert" style="margin-top:10px; display:none">
+                                            <div class="alert alert-success" id="error" style="margin-top:10px; display:none">
                             <strong>Added</strong> exam added successfully 
                         </div>
 
@@ -75,15 +75,28 @@
                                     </thead>
                                     <tbody>
                                   <?php
+                                  $count=0;
+                                  $sql=mysqli_query($link,"select * from `exam_category`   ");
+
+                                  while($row=mysqli_fetch_array($sql)){
+                                    $count=$count+1;
+                                    ?>
+                                         
+                                        <tr>
+                                            <th scope="row"><?php echo $count;  ?></th>
+                                            <td><?php echo $row['category'];  ?></td>
+                                            <td><?php echo $row['exam_time'];  ?></td>
+                                            <td>Edit</td>
+                                            <td><button class="btn btn-danger"><a href="delete.php?id=<?php echo $row["id"]; ?>" class="text-light"> Delete </a></td></button>
+                                        </tr>
+
+                                    
+                                    <?php
+                                  }
+
 
                                   ?>
 
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
                                      
                                     </tbody>
                                 </table>
@@ -115,8 +128,15 @@ if(isset($_POST['submit1'])){
 
  ?>
 <script type="text/javascript">
-  document.getElementById("insert").style.display="block";
+
+ alert("exam added successfully");
+  window.location.href=window.location.href;
+
+
 </script>
+
+
+
 
 <?php
 }
