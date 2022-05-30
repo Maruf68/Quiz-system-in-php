@@ -86,7 +86,8 @@
                                             <th scope="row"><?php echo $count;  ?></th>
                                             <td><?php echo $row['category'];  ?></td>
                                             <td><?php echo $row['exam_time'];  ?></td>
-                                            <td>Edit</td>
+                                            <td><button class="btn btn-warning"><a href="edit.php?id=<?php echo $row["id"]; ?>" class="text-light"> Update </a></td></button>
+
                                             <td><button class="btn btn-danger"><a href="delete.php?id=<?php echo $row["id"]; ?>" class="text-light"> Delete </a></td></button>
                                         </tr>
 
