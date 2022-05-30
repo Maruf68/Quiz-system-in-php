@@ -92,7 +92,7 @@ if(isset($_POST['submit1'])){
          
      }
      else{
-         header("location: ../demo.php");
+         header("location: demo.php");
      }
 }
 
