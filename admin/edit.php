@@ -52,9 +52,7 @@ $exam_time=$row["exam_time"];
                                         <div class="form-group">
                                             <input type="submit" name="submit1" value="Update exam" class="btn btn-success">
                                           
-                                            <div class="alert alert-success" id="error" style="margin-top:10px; display:none">
-                            <strong>Added</strong> exam added successfully 
-                        </div>
+                        
      
                            
 
