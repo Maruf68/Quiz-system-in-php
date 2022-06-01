@@ -96,15 +96,15 @@
 
                                         <div class="form-group"><label for="company" class=" form-control-label">Add
                                                 Question</label><input type="text" placeholder="Add Question"
-                                                class="form-control" name="fquestion"></div>
+                                                class="form-control" name="fquestion" ></div>
 
                                         <div class="form-group"><label for="company" class=" form-control-label">Add
                                                 Option 1</label><input type="file" class="form-control"
-                                                style="padding-bottom:35px" name="fopt1"></div>
+                                                style="padding-bottom:35px" name="fopt1" ></div>
 
                                         <div class="form-group"><label for="company" class=" form-control-label">Add
                                                 Option 2</label><input type="file" class="form-control"
-                                                style="padding-bottom:35px" name="fopt2"></div>
+                                                style="padding-bottom:35px" name="fopt2" ></div>
 
                                         <div class="form-group"><label for="company" class=" form-control-label">Add
                                                 Option 3</label><input type="file" class="form-control"
@@ -112,10 +112,10 @@
 
                                         <div class="form-group"><label for="company" class=" form-control-label">Add
                                                 Option 4</label><input type="file" class="form-control"
-                                                style="padding-bottom:35px" name="fopt4"></div>
+                                                style="padding-bottom:35px" name="fopt4" ></div>
 
                                         <div class="form-group"><label for="company" class=" form-control-label">Add
-                                                Answer</label><input type="file" class="form-control" name="fanswer">
+                                                Answer</label><input type="file" class="form-control"   style="padding-bottom:35px" name="fanswer">
                                         </div>
 
 
@@ -163,8 +163,8 @@
                                      <th>opt2</th>
                                      <th>opt3</th>
                                      <th>opt4</th>
-                                     <th>edit</th>
-                                     <th>delete</th>
+                                     <th>Edit</th>
+                                     <th>Delete</th>
                                      
 
                             </tr>
@@ -237,6 +237,34 @@
 
 
                                echo "</td>";
+                               echo "<td>";
+                                   
+                               if(strpos($row["opt4"],'opt_images/')!==false)
+                               {
+                                   ?>
+                               <a href="edit_option_images.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?>">Edit</a>
+
+                                   <?php
+                               }
+                                else{
+                                   ?>
+                                    <a href="edit_option.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?> ">Edit</a>
+
+                                   <?php
+                                   
+                                }
+
+                               echo "</td>";
+                               echo "<td>";
+                               ?>
+                                   <a href="delete_option.php?id=<?php echo $row["id"]; ?>&id1=<?php echo $id; ?> ">Delete</a>
+                                <?php
+                               
+
+                    
+
+                               echo "</td>";
+
 
                                echo "</tr>";
                                       
@@ -287,6 +315,7 @@ else{
      ?>
 <script type="text/javascript">
 alert("question added successfully");
+window.location.href = window.location.href;
 </script>
 
 <?php
@@ -333,6 +362,7 @@ else{
 
 
        $tm=md5(time());
+
        $fnm2=$_FILES["fopt2"]["name"];
        $dst2="./opt_images/".$fnm2; 
        $dst_db2="opt_images/".$fnm2;
