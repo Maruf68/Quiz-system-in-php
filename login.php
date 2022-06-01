@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 ?>
 
@@ -78,7 +79,17 @@ if($count==0){
    
 }
 else{
-   header('Location: demo.php');
+    $_SESSION["username"]=$_POST["username"];
+
+    ?>
+    <script type="text/javascript">
+
+  window.location="select_exam.php";
+    </script>
+
+    <?php
+    
+   
 }
 
 }
