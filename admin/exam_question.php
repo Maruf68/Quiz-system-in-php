@@ -51,7 +51,7 @@
                                         <tr>
                                             <th scope="row"><?php echo $count;  ?></th>
                                             <td><?php echo $row['category'];  ?></td>
-                                            <td><?php echo $row['exam_time'];  ?></td>
+                                            <td><?php echo $row['exam_time_in_minutes'];  ?></td>
                                             <td><a href="add_edit_question.php?id=<?php echo $row["id"]; ?>"> Select </a></td>
 
                                             
