@@ -2,6 +2,14 @@
 session_start();
 include "connection.php";
 include "header.php";
+if(!isset($_SESSION["username"]))
+{
+    ?>
+    <script type="text/javascript">
+        window.location="login.php";
+    </script>
+    <?php
+}
 ?>
 
 

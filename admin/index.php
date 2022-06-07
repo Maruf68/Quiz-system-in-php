@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include "../connection.php";
 ?>
 
@@ -92,6 +94,7 @@ if(isset($_POST['submit1'])){
          
      }
      else{
+         $_SESSION["admin"]=$username;
          header("location: demo.php");
      }
 }

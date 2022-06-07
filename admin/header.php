@@ -57,7 +57,7 @@
                         <a href="old_exam_results.php"> <i class="menu-icon fa fa-dashboard"></i>All exam resuls</a>
                     </li>
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-close"></i>Logout </a>
+                        <a href="logout.php"> <i class="menu-icon fa fa-close"></i>Logout </a>
                     </li>
                    
                 </ul>

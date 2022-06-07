@@ -1,6 +1,18 @@
 <?php
+
+                                  session_start();
                                     include "header.php";
                                     include "../connection.php";
+                                    if(!isset($_SESSION["admin"])){
+
+                                        ?>
+                                    
+                                        <script type="text/javascript">
+                                        window.location="index.php";    
+                                        </script>
+                                        <?php
+                                    
+                                    }                        
                                     $id=$_GET["id"];
                                     $exam_category="";
                                     $sql=mysqli_query($link,"select * from `exam_category` where id=$id");
